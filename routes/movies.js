@@ -49,7 +49,7 @@ router.route('/movie/:id/stream').get(function (request, respond) {
 
         var positions = range.replace(/bytes=/, "").split("-");
         var start = parseInt(positions[0], 10);
-        var total = stats.length;
+        var total = stats.size;
         var end = positions[1] ? parseInt(positions[1], 10) : total - 1;
         var chunksize = (end - start) + 1;
 
